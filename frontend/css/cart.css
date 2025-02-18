@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(rgb(238, 234, 234), rgba(150, 207, 224, 0.941));
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.cart {
+    padding: 2rem;
+    text-align: center;
+}
+
+#cart-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.cart-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.cart-item p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.cart-item .price {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.remove-from-cart {
+    background-color: #ff3333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-from-cart:hover {
+    background-color: #cc0000;
+}
+
+#checkout-btn {
+    background-color: #008CBA;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#checkout-btn:hover {
+    background-color: #005f73;
+}
+
+footer {
+    background-color: #896f6f37;
+    color: #272020;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
