@@ -4,14 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("http://localhost:5000/api/products")
         .then(response => response.json())
         .then(products => {
-            // Show only the first three products
-            const limitedProducts = products.slice(0, 3);
-
-            productList.innerHTML = limitedProducts.map(product => `
+            productList.innerHTML = products.map(product => `
                 <div class="product-card">
                     <img src="http://localhost:5000/${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
-                    <p>$${product.price}</p>
+                    <p class="price">$${product.price}</p>
+                    <p>${product.description}</p>
                     <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
                 </div>
             `).join("");
@@ -21,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const token = localStorage.getItem("token");
 
                     if (!token) {
-                        alert("⚠️ Please log in to add items to your cart.");
+                        alert("Please log in to add items to your cart.");
                         window.location.href = "login.html";
                         return;
                     }
@@ -38,24 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     })
                     .then(res => res.json())
                     .then(data => {
-                        if (data.error === 'Invalid token') {
-                            alert("⚠️ Your session has expired. Please log in again.");
-                            localStorage.removeItem("token");
-                            window.location.href = "login.html";
+                        if (data.error) {
+                            alert(data.error);
                         } else {
-                            console.log("Add to cart response:", data);
-                            alert("🛒 Product added to cart!");
+                            alert("Product added to cart!");
                         }
                     })
                     .catch(error => {
                         console.error("Error adding to cart:", error);
-                        alert("❌ Failed to add product to cart.");
+                        alert("Failed to add product to cart.");
                     });
                 });
             });
         })
         .catch(error => {
             console.error("Error fetching products:", error);
-            productList.innerHTML = "<p>Failed to load products.</p>";
+            productList.innerHTML = "<p>Failed to load products. Please try again later.</p>";
         });
 });
