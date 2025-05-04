@@ -71,7 +71,10 @@ nav ul li a:hover {
 .hero .btn:hover {
     background-color: #e6b800;
 }
+
 /*product*/
+
+
 .products {
     padding: 2rem;
     display: grid;
@@ -149,3 +152,7 @@ footer {
         font-size: 1rem;
     }
 }
+    
+/* Rohan ko code yeta bata suru*/
+
+    
