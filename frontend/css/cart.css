@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(rgb(238, 234, 234), rgba(150, 207, 224, 0.941));
+    background-image: url(../imgs/meroarkoimg.png);
     color: #333;
 }
 
@@ -58,7 +58,9 @@ nav ul li a:hover {
     padding: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+h2{
+    color: black;
+}
 .cart-item img {
     max-width: 100%;
     height: auto;
@@ -69,6 +71,7 @@ nav ul li a:hover {
     font-size: 1.2rem;
     margin: 1rem 0;
 }
+
 
 .cart-item p {
     color: #666;
@@ -111,8 +114,7 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #896f6f37;
-    color: #272020;
+    color: rgb(9, 9, 9);
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;

@@ -1,25 +1,30 @@
-
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    background:linear-gradient(rgb(238, 234, 234) ,rgba(150, 207, 224, 0.941));
+    background-image: url('../imgs/img1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
     color: #333;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+
+
+    margin: 0;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s ease;
+
 }
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: bold;
+    color: #faf3f3;
+    font-family: sans-serif;
 }
 
 nav ul {
@@ -29,13 +34,14 @@ nav ul {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #e8e0e0;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.4rem;
 }
 
-nav ul li a:hover {
-    color: #ffcc00;
+header nav ul li a:hover {
+    color: #e6b800;
 }
 
 .hero {
@@ -52,11 +58,13 @@ nav ul li a:hover {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: #ede5e5;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    color: #e2dddd;
 }
 
 .hero .btn {
@@ -66,15 +74,14 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 .hero .btn:hover {
-    background-color: #e6b800;
+    background-color: #caa308;
 }
 
 /*product*/
-
-
 .products {
     padding: 2rem;
     display: grid;
@@ -126,13 +133,20 @@ nav ul li a:hover {
     background-color: #555;
 }
 
+.page {
+    animation: zoomIn 1s ease-out forwards;
+    transform: scale(1);
+    /* fallback */
+}
+
 footer {
-    background-color: #896f6f37;
-    color: #272020;
+
+    color: #fefafa;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
 }
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -152,7 +166,3 @@ footer {
         font-size: 1rem;
     }
 }
-    
-/* Rohan ko code yeta bata suru*/
-
-    

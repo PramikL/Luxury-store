@@ -1,27 +1,33 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: #f4f4f4;
+    background-image: url(../imgs/pexels-max-fischer-5868730.jpg);
     margin: 0;
     padding: 0;
+    
 }
 
 .checkout-container {
     max-width: 400px;
     margin: 50px auto;
-    background: white;
+    background: rgba(85, 14, 14, 0.514);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    
+}
+.checkout-container:hover{
+    transform: scale(1.05);
 }
 
 .checkout-container h2 {
     margin-bottom: 25px;
     text-align: center;
-    color: #333;
+    color: #f9f7f7;
 }
 
 .form-group {
     margin-bottom: 20px;
+    color: #fcefef;
 }
 
 .form-group label {
@@ -54,3 +60,4 @@ button {
 button:hover {
     background: #1565c0;
 }
+

@@ -2,27 +2,35 @@ body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fafafa;
+    background-image: url(../imgs/img3.png);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    
+    
 }
 
 /* Navbar - Matching index.html style */
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+h1{
+    color: white;
+}
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    font-size: 1.2rem;
     gap: 1.5rem;
     margin: 0;
     padding: 0;
@@ -107,10 +115,10 @@ button.add-to-cart:hover {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #f1f1f1;
     margin-top: 2rem;
     font-size: 0.9rem;
-    color: #444;
+    color: white;
+    
 }
 
 /* Responsive */
