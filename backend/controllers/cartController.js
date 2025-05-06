@@ -1,6 +1,7 @@
 const { getCartItems, addProductToCart, removeCartItem } = require('../models/cartModel');
+const db = require('../models/db'); // Assuming this is where your DB connection is
 
-exports.fetchCartItems = async (req, res) => {
+const fetchCartItems = async (req, res) => {
     console.log("Fetching cart for user ID:", req.user.id); 
     const userId = req.user.id;
     try {
@@ -13,7 +14,7 @@ exports.fetchCartItems = async (req, res) => {
     }
 };
 
-exports.addToCart = async (req, res) => {
+const addToCart = async (req, res) => {
     const userId = req.user.id;
     const { product_id } = req.body;
 
@@ -29,7 +30,7 @@ exports.addToCart = async (req, res) => {
     }
 };
 
-exports.deleteCartItem = async (req, res) => {
+const deleteCartItem = async (req, res) => {
     const userId = req.user.id;
     const productId = req.params.productId;
     try {
@@ -39,3 +40,18 @@ exports.deleteCartItem = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+const clearCart = async (req, res) => {
+    const userId = req.user.id;
+
+    try {
+        await db.query("DELETE FROM cart WHERE user_Id = ?", [userId]);
+        
+        res.status(200).json({ message: 'Cart cleared successfully.' });
+    } catch (error) {
+        console.error("Error clearing cart:", error);
+        res.status(500).json({ error: 'Failed to clear cart.' });
+    }
+};
+
+module.exports = { addToCart, fetchCartItems, deleteCartItem, clearCart };
