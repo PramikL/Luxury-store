@@ -6,21 +6,27 @@
     <title>Our Products - Luxury Store</title>
     <link rel="stylesheet" href="../css/product.css">
     <script>window.API_BASE = 'http://localhost:5000';</script>
+      <!-- 👇 handles Login/Logout toggle -->
+    <script defer src="../js/nav-auth.js"></script>
     <script defer src="../js/product.js"></script>
 </head>
 <body>
     
     <header>
-        <div class="logo">Luxury Store</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="logo">Luxury Store</div>
+    <nav>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li id="login-link"><a href="login.html">Login</a></li>
+            <li id="logout-link" style="display: none;">
+                <a href="#" id="logout-btn">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
 
     <main>
         <h1 class="page-title">All Products</h1>

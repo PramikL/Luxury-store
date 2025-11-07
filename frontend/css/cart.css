@@ -7,17 +7,18 @@ body {
     color: #333;
 }
 
+/* Header / Navbar – aligned with other pages */
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem;
+    padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: bold;
 }
 
@@ -25,6 +26,9 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
 }
 
 nav ul li a {
@@ -37,6 +41,7 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
+/* Cart layout */
 .cart {
     padding: 2rem;
     text-align: center;
@@ -114,6 +119,7 @@ h2 {
     background-color: #005f73;
 }
 
+/* Footer */
 footer {
     color: rgb(9, 9, 9);
     text-align: center;
