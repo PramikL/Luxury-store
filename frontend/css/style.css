@@ -1,23 +1,24 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    box-sizing: border-box;
     background-image: url('../imgs/img1.png');
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
     color: #333;
 }
 
+/* ================== Header / Navbar ================== */
 header {
-
-
-    margin: 0;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease;
-
 }
 
 header .logo {
@@ -44,7 +45,10 @@ header nav ul li a:hover {
     color: #e6b800;
 }
 
+/* ================== Hero ================== */
 .hero {
+    /* body already has background image; this keeps your layout
+       but you can remove background here if you only want the body image */
     background: url('hero-bg.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
@@ -67,7 +71,8 @@ header nav ul li a:hover {
     color: #e2dddd;
 }
 
-.hero .btn {
+/* General .btn style so it can be reused */
+.btn {
     background-color: #ffcc00;
     color: #333;
     padding: 0.8rem 2rem;
@@ -75,13 +80,20 @@ header nav ul li a:hover {
     font-weight: bold;
     border-radius: 5px;
     font-size: 1rem;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
-.hero .btn:hover {
+.btn:hover {
     background-color: #caa308;
 }
 
-/*product*/
+.hero .btn {
+    /* keeps same look, but you can override here if needed later */
+}
+
+/* ================== Featured Products (optional on home) ================== */
 .products {
     padding: 2rem;
     display: grid;
@@ -91,7 +103,6 @@ header nav ul li a:hover {
 
 .product-card {
     background-color: #fff;
-    background: cover;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
@@ -133,20 +144,15 @@ header nav ul li a:hover {
     background-color: #555;
 }
 
-.page {
-    animation: zoomIn 1s ease-out forwards;
-    transform: scale(1);
-    /* fallback */
-}
-
+/* ================== Footer ================== */
 footer {
-
     color: #fefafa;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
 }
 
+/* ================== Responsive ================== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;

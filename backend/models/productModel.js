@@ -137,6 +137,30 @@ const getProductsByCategory = async (category) => {
 };
 
 /**
+ * Get related products from the same category as the given product.
+ * Excludes the product itself, ordered by newest first.
+ */
+const getRelatedProductsByCategory = async (productId, limit = 4) => {
+  const baseProduct = await getProductById(productId);
+  if (!baseProduct || !baseProduct.category) return [];
+
+  const cat = String(baseProduct.category).trim();
+  if (!cat) return [];
+
+  const [rows] = await pool.query(
+    `SELECT id, name, price, image, description, category, created_at
+     FROM products
+     WHERE category = ?
+       AND id <> ?
+     ORDER BY created_at DESC, id DESC
+     LIMIT ?`,
+    [cat, baseProduct.id, limit]
+  );
+
+  return rows;
+};
+
+/**
  * (Optional) Count products – handy for admin pagination.
  */
 const countProducts = async () => {
@@ -151,6 +175,8 @@ module.exports = {
   updateProduct,
   deleteProduct,
   getProductsByCategory,
+  // recommendations
+  getRelatedProductsByCategory,
   // optional utility
   countProducts,
 };

@@ -39,7 +39,7 @@ function showToast(message, isError = false) {
 const fmtCurrency = (n) => {
   const val = Number(n);
   if (!Number.isFinite(val)) return n;
-  return `₹${val.toFixed(2)}`; // tweak as you like
+  return `$${val.toFixed(2)}`; 
 };
 const fmtDate = (iso) => {
   try { return new Date(iso).toLocaleDateString(); } catch { return iso; }
