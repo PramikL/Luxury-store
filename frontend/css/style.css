@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('../imgs/img1.png');
+    background-image: url('../imgs/img1-1920x1080.png');
     background-repeat: no-repeat;
     background-size: cover;
     color: #333;
@@ -19,6 +19,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.logo img{
+    padding: 0;
+    margin: 0;
+    height: 90px;
+    width: 110px;
 }
 
 header .logo {
@@ -89,9 +95,7 @@ header nav ul li a:hover {
     background-color: #caa308;
 }
 
-.hero .btn {
-    /* keeps same look, but you can override here if needed later */
-}
+
 
 /* ================== Featured Products (optional on home) ================== */
 .products {

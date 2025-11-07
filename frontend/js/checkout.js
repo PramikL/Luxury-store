@@ -95,10 +95,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init Stripe Elements
   stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
   const elements = stripe.elements();
+
+  // 👇 Add this style config
+  const style = {
+    base: {
+      color: '#ffffff',           // card number & text WHITE
+      fontSize: '16px',
+      fontFamily: '"Helvetica Neue", Arial, sans-serif',
+      '::placeholder': {
+        color: '#f0f0f0',         // placeholder light grey / whiteish
+      },
+      iconColor: '#ffffff',       // brand icons white
+    },
+    invalid: {
+      color: '#ff6b6b',           // red for invalid fields
+      iconColor: '#ff6b6b',
+    },
+  };
+
+  // 👇 Pass style into the card element
   cardElement = elements.create('card', {
     hidePostalCode: true,
+    style: style,
   });
+
   cardElement.mount('#card-element');
+
 
   cardElement.on('change', (event) => {
     if (event.error) {

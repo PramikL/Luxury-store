@@ -8,7 +8,7 @@
 
 /* Body Styling */
 body {
-    background-image: url(../imgs/meroimg.png);
+    background-image: url(../imgs/meroimg-1920x1080\ \(1\).png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -26,6 +26,10 @@ body {
     width: 100%;
     max-width: 400px;
     text-align: center;
+    transition: transform .3s ease-in-out;
+}
+.login-container:hover{
+    transform: scale(1.08);
 }
 
 /* Heading */
